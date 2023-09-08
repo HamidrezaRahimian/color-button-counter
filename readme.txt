@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<body>
+    //_____________________________________________________________________________
+
+    <div id ='title'>
+        <h2 >hello morning!</h2>
+      </div>
+      
+      
+      
+      <div style="display : flex">
+      
+         <button    class ='colorSquare' id='red' style="height: 100px ; width: 100px ;
+       background-color: red;" value='red' ></button>
+      
+         <button class ='colorSquare' id='yellow' style="height: 100px ; width: 100px ;
+      background-color: yellow;" value='yellow'></button>
+      
+         <button class ='colorSquare'  id='green' style="height: 100px ; width: 100px ;
+       background-color: green;" value='green'></button>
+      
+      </div>
+      <button id='Clear-Game'>Clear the game!</button>
+
+      
+      //_____________________________________________________________________________
+    <script>
+
+        //-------------------------------------------------------------------------
+// get ID from HTML
+// let redDiv = document.getElementById('red');
+// let yellowDiv = document.getElementById ('yellow') ;
+// let greenDiv = document.getElementById ('green') ;
+
+
+
+//square.onclick = () =>
+
+let squares = document.querySelectorAll('.colorSquare') ;
+console.log(squares);
+//console.log(squares[1].value)
+//
+
+
+let timesClicked = {'red': 0,'yellow': 0,'green': 0,}
+
+
+
+
+squares.forEach(square => {
+  //whene we click on a Button then
+square.onclick = () => {
+  //timeClick value of that square willbe on more
+  timesClicked[square.value] += 1 ;
+  //show the value of timesClick in the middle of sqaure
+  square.innerText = timesClicked[square.value];
+ } 
+});
+
+//Click on each button and say us the color
+//squares.forEach(square => {square.onclick = () => console.log(square.value) });
+// console.log(square.value)
+//alternativ
+// redDiv.onclick = () =>{ console.log('red');}
+// yellowDiv.onclick = () =>{ console.log('yellow');}
+// greenDiv.onclick = () =>{ console.log('green');}
+
+//when click on clear the game button reset all the numbers
+function clearScores () {
+  squares.forEach(square => square.innerText = '')
+};
+
+let clearGameDiv = document.getElementById('Clear-Game');
+clearGameDiv.onclick = () => clearScores() ;
+
+
+
+//------------------------------------------------------------------------------------
+
+
+    </script>
+    <h1> try again Alexxxx</h1>
+</body>
